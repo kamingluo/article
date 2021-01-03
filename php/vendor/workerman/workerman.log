@@ -1,0 +1,132 @@
+2020-05-13 04:00:04 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'think\Log' not found in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 40"
+2020-05-13 05:40:11 pid:1 Worker process terminated with ERROR: E_ERROR "Call to undefined function db() in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 55"
+2020-05-13 06:01:07 pid:1 Worker process terminated with ERROR: E_ERROR "Call to a member function select() on a non-object in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 60"
+2020-05-13 06:02:13 pid:1 Worker process terminated with ERROR: E_ERROR "Call to a member function select() on a non-object in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 60"
+2020-05-28 02:20:20 pid:1 exception 'Exception' with message '$_SESSION['room_id'] not set. client_ip:127.0.0.1' in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php:122
+Stack trace:
+#0 [internal function]: Events::onMessage('7f0000010b55000...', '{\n\t"type": "say...')
+#1 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\gateway-worker\src\BusinessWorker.php(404): call_user_func('Events::onMessa...', '7f0000010b55000...', '{\n\t"type": "say...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Connection\TcpConnection.php(660): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #31)
+#5 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Events\Select.php(292): call_user_func_array(Array, Array)
+#6 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(2408): Workerman\Events\Select->loop()
+#7 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\gateway-worker\src\BusinessWorker.php(197): Workerman\Worker->run()
+#8 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(1404): GatewayWorker\BusinessWorker->run()
+#9 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(1347): Workerman\Worker::forkWorkersForWindows()
+#10 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(546): Workerman\Worker::forkWorkers()
+#11 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\start_businessworker.php(35): Workerman\Worker::runAll()
+#12 {main}
+2020-05-28 02:20:20 pid:1 Worker process terminated
+2020-05-28 02:49:29 pid:1 Worker process terminated with ERROR: E_PARSE "syntax error, unexpected '$client_name' (T_VARIABLE) in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 96"
+2020-05-28 02:49:30 pid:1 Worker process terminated with ERROR: E_PARSE "syntax error, unexpected '$client_name' (T_VARIABLE) in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 96"
+2020-05-28 02:49:31 pid:1 Worker process terminated with ERROR: E_PARSE "syntax error, unexpected '$client_name' (T_VARIABLE) in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 96"
+2020-05-28 02:49:32 pid:1 Worker process terminated with ERROR: E_PARSE "syntax error, unexpected '$client_name' (T_VARIABLE) in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 96"
+2020-05-28 02:49:33 pid:1 Worker process terminated with ERROR: E_PARSE "syntax error, unexpected '$client_name' (T_VARIABLE) in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 96"
+2020-05-28 02:49:34 pid:1 Worker process terminated with ERROR: E_PARSE "syntax error, unexpected '$client_name' (T_VARIABLE) in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 96"
+2020-05-28 02:49:35 pid:1 Worker process terminated with ERROR: E_PARSE "syntax error, unexpected '$client_name' (T_VARIABLE) in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 96"
+2020-05-28 02:49:36 pid:1 Worker process terminated with ERROR: E_PARSE "syntax error, unexpected '$client_name' (T_VARIABLE) in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 96"
+2020-05-28 02:49:37 pid:1 Worker process terminated with ERROR: E_PARSE "syntax error, unexpected '$client_name' (T_VARIABLE) in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 96"
+2020-05-28 02:49:38 pid:1 Worker process terminated with ERROR: E_PARSE "syntax error, unexpected '$client_name' (T_VARIABLE) in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 96"
+2020-05-28 02:49:39 pid:1 Register auth timeout (127.0.0.1). See http://doc2.workerman.net/register-auth-timeout.html
+2020-05-28 02:49:39 pid:1 Worker process terminated with ERROR: E_PARSE "syntax error, unexpected '$client_name' (T_VARIABLE) in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 96"
+2020-05-28 02:49:40 pid:1 Register auth timeout (127.0.0.1). See http://doc2.workerman.net/register-auth-timeout.html
+2020-05-28 02:49:40 pid:1 Worker process terminated with ERROR: E_PARSE "syntax error, unexpected '$client_name' (T_VARIABLE) in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 96"
+2020-05-28 02:49:41 pid:1 Worker process terminated with ERROR: E_PARSE "syntax error, unexpected '$client_name' (T_VARIABLE) in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 96"
+2020-05-28 02:49:41 pid:1 Register auth timeout (127.0.0.1). See http://doc2.workerman.net/register-auth-timeout.html
+2020-05-29 06:50:41 pid:1 Worker process terminated with ERROR: E_ERROR "Call to a member function insert() on a non-object in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 113"
+2020-05-29 07:33:59 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required 'E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push/Workerman/Autoloader.php' (include_path='.;C:\php\pear') in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 4"
+2020-05-29 07:34:00 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required 'E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push/Workerman/Autoloader.php' (include_path='.;C:\php\pear') in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 4"
+2020-05-29 07:34:01 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required 'E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push/Workerman/Autoloader.php' (include_path='.;C:\php\pear') in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 4"
+2020-05-29 07:34:02 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required 'E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push/Workerman/Autoloader.php' (include_path='.;C:\php\pear') in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 4"
+2020-05-29 07:34:16 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required 'E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push/workerman/Autoloader.php' (include_path='.;C:\php\pear') in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 4"
+2020-05-29 07:34:17 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required 'E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push/workerman/Autoloader.php' (include_path='.;C:\php\pear') in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 4"
+2020-05-29 07:34:18 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required 'E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push/workerman/Autoloader.php' (include_path='.;C:\php\pear') in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 4"
+2020-05-29 07:36:06 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Workerman\MySQL\Connection' not found in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 19"
+2020-05-29 07:36:07 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Workerman\MySQL\Connection' not found in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 19"
+2020-05-29 07:36:08 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Workerman\MySQL\Connection' not found in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 19"
+2020-05-29 07:36:09 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Workerman\MySQL\Connection' not found in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 19"
+2020-05-29 07:37:41 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required '../Connection.php' (include_path='.;C:\php\pear') in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 3"
+2020-05-29 07:37:42 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required '../Connection.php' (include_path='.;C:\php\pear') in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 3"
+2020-05-29 07:37:43 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required '../Connection.php' (include_path='.;C:\php\pear') in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php on line 3"
+2020-06-02 08:05:25 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://doc2.workerman.net/send-buffer-to-worker-fail.html
+2020-06-02 08:05:25 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://doc2.workerman.net/send-buffer-to-worker-fail.html
+2020-06-02 08:05:26 pid:1 Register auth timeout (127.0.0.1). See http://doc2.workerman.net/register-auth-timeout.html
+2020-06-02 08:05:37 pid:1 exception 'PDOException' with message 'SQLSTATE[HY000] [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+' in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Connection.php:1716
+Stack trace:
+#0 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Connection.php(1716): PDO->__construct('mysql:dbname=cr...', 'crowd', 'crowd', Array)
+#1 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Connection.php(1702): Workerman\MySQL\Connection->connect()
+#2 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php(19): Workerman\MySQL\Connection->__construct('47.106.253.110', '3306', 'crowd', 'crowd', 'crowd')
+#3 [internal function]: Events::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#4 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\gateway-worker\src\BusinessWorker.php(223): call_user_func('Events::onWorke...', Object(GatewayWorker\BusinessWorker))
+#5 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#6 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(2393): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#7 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\gateway-worker\src\BusinessWorker.php(197): Workerman\Worker->run()
+#8 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(1404): GatewayWorker\BusinessWorker->run()
+#9 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(1347): Workerman\Worker::forkWorkersForWindows()
+#10 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(546): Workerman\Worker::forkWorkers()
+#11 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\start_businessworker.php(35): Workerman\Worker::runAll()
+#12 {main}
+2020-06-02 08:05:38 pid:1 Worker process terminated
+2020-06-02 08:05:46 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://doc2.workerman.net/send-buffer-to-worker-fail.html
+2020-06-02 08:05:46 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://doc2.workerman.net/send-buffer-to-worker-fail.html
+2020-06-02 08:05:49 pid:1 Register auth timeout (127.0.0.1). See http://doc2.workerman.net/register-auth-timeout.html
+2020-06-02 08:06:12 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://doc2.workerman.net/send-buffer-to-worker-fail.html
+2020-06-02 08:06:12 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://doc2.workerman.net/send-buffer-to-worker-fail.html
+2020-06-02 08:06:19 pid:1 Register auth timeout (127.0.0.1). See http://doc2.workerman.net/register-auth-timeout.html
+2020-06-02 08:06:30 pid:1 exception 'PDOException' with message 'SQLSTATE[HY000] [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+' in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Connection.php:1716
+Stack trace:
+#0 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Connection.php(1716): PDO->__construct('mysql:dbname=cr...', 'crowd', 'crowd', Array)
+#1 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Connection.php(1702): Workerman\MySQL\Connection->connect()
+#2 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php(19): Workerman\MySQL\Connection->__construct('47.106.253.110', '3306', 'crowd', 'crowd', 'crowd')
+#3 [internal function]: Events::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#4 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\gateway-worker\src\BusinessWorker.php(223): call_user_func('Events::onWorke...', Object(GatewayWorker\BusinessWorker))
+#5 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#6 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(2393): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#7 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\gateway-worker\src\BusinessWorker.php(197): Workerman\Worker->run()
+#8 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(1404): GatewayWorker\BusinessWorker->run()
+#9 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(1347): Workerman\Worker::forkWorkersForWindows()
+#10 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(546): Workerman\Worker::forkWorkers()
+#11 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\start_businessworker.php(35): Workerman\Worker::runAll()
+#12 {main}
+2020-06-02 08:06:31 pid:1 Worker process terminated
+2020-06-02 08:06:42 pid:1 Register auth timeout (127.0.0.1). See http://doc2.workerman.net/register-auth-timeout.html
+2020-06-02 08:06:53 pid:1 exception 'PDOException' with message 'SQLSTATE[HY000] [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+' in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Connection.php:1716
+Stack trace:
+#0 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Connection.php(1716): PDO->__construct('mysql:dbname=cr...', 'crowd', 'crowd', Array)
+#1 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Connection.php(1702): Workerman\MySQL\Connection->connect()
+#2 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php(19): Workerman\MySQL\Connection->__construct('47.106.253.110', '3306', 'crowd', 'crowd', 'crowd')
+#3 [internal function]: Events::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#4 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\gateway-worker\src\BusinessWorker.php(223): call_user_func('Events::onWorke...', Object(GatewayWorker\BusinessWorker))
+#5 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#6 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(2393): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#7 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\gateway-worker\src\BusinessWorker.php(197): Workerman\Worker->run()
+#8 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(1404): GatewayWorker\BusinessWorker->run()
+#9 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(1347): Workerman\Worker::forkWorkersForWindows()
+#10 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(546): Workerman\Worker::forkWorkers()
+#11 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\start_businessworker.php(35): Workerman\Worker::runAll()
+#12 {main}
+2020-06-02 08:06:54 pid:1 Worker process terminated
+2020-06-02 08:07:38 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://doc2.workerman.net/send-buffer-to-worker-fail.html
+2020-06-02 08:07:38 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://doc2.workerman.net/send-buffer-to-worker-fail.html
+2020-06-02 08:07:44 pid:1 Register auth timeout (127.0.0.1). See http://doc2.workerman.net/register-auth-timeout.html
+2020-06-02 08:07:55 pid:1 exception 'PDOException' with message 'SQLSTATE[HY000] [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+' in E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Connection.php:1716
+Stack trace:
+#0 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Connection.php(1716): PDO->__construct('mysql:dbname=cr...', 'crowd', 'crowd', Array)
+#1 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Connection.php(1702): Workerman\MySQL\Connection->connect()
+#2 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\Events.php(19): Workerman\MySQL\Connection->__construct('47.106.253.110', '3306', 'crowd', 'crowd', 'crowd')
+#3 [internal function]: Events::onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#4 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\gateway-worker\src\BusinessWorker.php(223): call_user_func('Events::onWorke...', Object(GatewayWorker\BusinessWorker))
+#5 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#6 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(2393): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#7 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\gateway-worker\src\BusinessWorker.php(197): Workerman\Worker->run()
+#8 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(1404): GatewayWorker\BusinessWorker->run()
+#9 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(1347): Workerman\Worker::forkWorkersForWindows()
+#10 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\vendor\workerman\workerman\Worker.php(546): Workerman\Worker::forkWorkers()
+#11 E:\install\phpshudy\PHPTutorial\WWW\myproject\wxgroup\php\application\push\start_businessworker.php(35): Workerman\Worker::runAll()
+#12 {main}
+2020-06-02 08:07:56 pid:1 Worker process terminated

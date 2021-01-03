@@ -1,0 +1,47 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">群名称</view>
+</cu-custom>
+
+<view>
+  <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}} " indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="500">
+    <swiper-item wx:for="{{swiperList}}" wx:key>
+      <!-- <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image> -->
+      <view class="cu-card case">
+        <view class="cu-item shadow">
+          <view class="image">
+            <image src="{{item.url}}" mode="widthFix"></image>
+            <view class="cu-bar bg-shadeBottom">
+              <text class="text-cut">我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+
+
+
+<view class="cu-list grid col-4 no-border">
+  <view class="cu-item" wx:for="1234" wx:key>
+    <view class="cuIcon-cardboardfill text-red">
+    </view>
+    <text>名称</text>
+  </view>
+</view>
+
+
+<view class="centered">
+  <view class="list-body">
+    <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');height: 350rpx; border-radius: 15rpx;">
+      <view class="newpadding text-white">
+        <view class=" text-sm">
+          <text class="title">我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。</text>
+        </view>
+        <view class="time text-xs">
+          <text decode="{{true}}"><text class="cuIcon-remind text-witle"></text>&nbsp;2021-01-03&nbsp;&nbsp;&nbsp;&nbsp;</text> <text decode="{{true}}"><text class="cuIcon-attention text-blue"></text>&nbsp;455</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

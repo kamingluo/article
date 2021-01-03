@@ -1,0 +1,61 @@
+
+page{
+  background-color: white;
+}
+
+.body {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  height: 250rpx;
+  background-color: white;
+  margin-top: -120rpx;
+  z-index: 999;
+  border-radius: 10rpx;
+}
+
+
+.userAvatarurl {
+  overflow: hidden;
+  display: block;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  margin-left: 15rpx;
+  margin-top: -70rpx;
+  
+}
+.userNickName {
+  font-size: 35rpx;
+  color: black;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  font-weight: 600;
+}
+
+.btn-body{
+  margin-top: 30rpx;
+}
+.btn-1{
+  margin-right: 120rpx;
+}
+
+.cu-btn.sm {
+	padding: 0 20rpx;
+	font-size: 25rpx;
+	height: 55rpx;
+}
+.nav{
+  margin-top: 40rpx;
+  box-shadow: 1px 3px 7px rgba(0, 0, 0, 0.1);
+}
+.btn-2{
+  color: white;
+}
+.list-body{
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+.list-body image{
+  margin-top: 30rpx;
+}
