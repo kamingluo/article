@@ -10,8 +10,9 @@ import axios from "axios";
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 let config = {
-  baseURL: 'http://article.tao618.cn',
-  // baseURL: 'http://127.0.0.1/myproject/littlefun/php/public',
+  // baseURL: 'http://article.tao618.cn',//新机器
+  baseURL: 'http://article.gzywudao.top',//旧机器
+  // baseURL: 'http://127.0.0.1/myproject/littlefun/php/public',//本地环境
   // baseURL: process.env.baseURL || process.env.apiUrl || ""
   // timeout: 60 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control

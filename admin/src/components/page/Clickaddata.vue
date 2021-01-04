@@ -152,7 +152,7 @@ export default {
     },
 
     getData() {
-      this.url = "admin.php/configure/datalist/clickadlist";
+      this.url = "/admin.php/configure/datalist/clickadlist";
       this.$axios.post(this.url, { pages: this.cur_page }).then((res) => {
         console.log("群列表信息", res);
         this.tableData = res.data.data;
@@ -164,7 +164,7 @@ export default {
       this.cur_page = 1;
       this.select_word = "";
       this.select_cate = "1";
-      let url = "admin.php/configure/datalist/clickadlist";
+      let url = "/admin.php/configure/datalist/clickadlist";
       this.$axios.post(url, { pages: 1 }).then((res) => {
         console.log("群列表信息", res);
         this.tableData = res.data.data;
@@ -202,7 +202,7 @@ export default {
           crowd_name: select_word,
         };
       }
-      let url = "admin.php/configure/datalist/clickadlist";
+      let url = "/admin.php/configure/datalist/clickadlist";
       this.$axios.post(url, resdata).then((res) => {
         console.log("搜索群返回", res);
         this.$message.success(`操作成功`);
@@ -221,7 +221,7 @@ export default {
     //确认删除
     confirmdelete() {
       let id = this.deleteid;
-      let url = "admin.php/configure/tasks/deletetask?id=" + id;
+      let url = "/admin.php/configure/tasks/deletetask?id=" + id;
       this.$axios(url).then((res) => {
         console.log("删除群返回", res);
         this.$message.success(`操作成功`);
