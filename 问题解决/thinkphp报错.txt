@@ -1,0 +1,1 @@
+LNMP - Warning: require(): open_basedir restriction in effect错误解决方法
