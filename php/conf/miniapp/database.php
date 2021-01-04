@@ -13,13 +13,13 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '47.106.253.110',
+    'hostname'        => '47.97.25.67',
     // 数据库名
-    'database'        => 'crowd',
+    'database'        => 'article',
     // 用户名
-    'username'        => 'crowd',
+    'username'        => 'article',
     // 密码
-    'password'        => 'crowd',
+    'password'        => 'XCzN7jPzN24YPYJc',
     // 端口
     'hostport'        => '3306',
     // 连接dsn

@@ -13,23 +13,14 @@ return [
     // +----------------------------------------------------------------------
     // | 七牛云设置
     // +----------------------------------------------------------------------
-    'qiniuaccessKey'=>'cOtKv4WjF_QrS7Cb98oOo0zQrmzbJNmJGeoCsQB3',//七牛云的accessKey
-    'qiniusecretKey'=>'tk2gLlSppyxjOWP6LGOsK4SNboyjIh44BAicYBXB',//七牛云的secretKey
+    'qiniuaccessKey'=>'Yvbwf_pGTvneirHoWceIAr84JBLOG2Lbc7C2Lf0f',//七牛云的accessKey
+    'qiniusecretKey'=>'9f8DHeZMBZWeKuAG5dWnbt3XZH0lYPhFeXrd3GE9',//七牛云的secretKey
 
     // +----------------------------------------------------------------------
     // | 微信小程序设置
     // +----------------------------------------------------------------------
-    'appid'=>'wx0e060ad90f7f41c4',//微信小程序appid
-    'secret'=>'1590c193503e580ed296b0c8fb3797d6',//微信小程序appscret
-
-    // +----------------------------------------------------------------------
-    // | 微信支付设置
-    // +----------------------------------------------------------------------
-    'spbill_create_ip'=>'47.106.253.111',//服务器的ip
-    'mch_id'=>'1603066168',//商户号
-    'pay_wx_key'=>'9IryYEGB04la2QsiM6de4ofvHSmucreW',//申请支付后有给予一个商户账号和密码，登陆后自己设置的key
-    'notify_url'=>'https://group.gzywudao.top/php/public/miniapp.php/pay/wxpay/paycallback',//回调的URL
-
+    'appid'=>'wx252277d86094e680',//微信小程序appid
+    'secret'=>'daa748e3847ff366db2510350f27caa2',//微信小程序appscret
 
     // +----------------------------------------------------------------------
     // | 应用设置
