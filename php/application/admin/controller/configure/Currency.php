@@ -23,5 +23,14 @@ class Currency
         return $ret;
      }
 
+     //跳转类型
+     public function jumptype()
+     {
+      $data=db('jump_type')->select();
+      $state=['state'   => '200','message'  => "跳转类型查询成功",'data'  => $data ];
+      return $state;
+
+     }
+
   
 }

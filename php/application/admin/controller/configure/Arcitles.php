@@ -8,7 +8,7 @@ class Arcitles
 {
 
    //文章列表查询成功
-   public function arcitleslist(Request $request){
+   public function lists(Request $request){
     $pages=$request->param("pages");
     $search=$request->param("search");
     if($pages == 1 || $pages==null  ){
@@ -43,10 +43,20 @@ class Arcitles
         return $resdata ;
   }
 
+  //修改文章状态
+  public function modifystate(Request $request)
+  {
+    $id=$request->param("id");
+    $switch=$request->param("switch");
+    $time =date('Y-m-d H:i:s',time());//获取当前时间
+    $dbreturn= db('articles')->where('id',$id)->update(['switch' =>$switch,'update_time' =>$time]);
+    return ['state'   => '200','message'  => "修改文章状态成功"] ;
+  }
+
 
 
   //新增文章
-  public function addarcitles(Request $request)
+  public function add(Request $request)
   {
     	$id=$request->param("id");
     	$title=$request->param("title");
