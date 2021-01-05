@@ -66,6 +66,16 @@ export default {
           title: "用户列表",
         },
         {
+          icon: "el-icon-lx-cascades",
+          index: "article",
+          title: "文章列表",
+        },
+        {
+          icon: "el-icon-lx-cascades",
+          index: "banner",
+          title: "首页轮播图",
+        },
+        {
           icon: "el-icon-lx-people",
           index: "channel",
           title: "渠道配置",

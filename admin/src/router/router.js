@@ -27,6 +27,16 @@ export default new Router({
           meta: { title: '用户列表' }
         },
         {
+          path: '/article',
+          component: resolve => require(['../components/page/Article.vue'], resolve),
+          meta: { title: '文章列表' }
+        },
+        {
+          path: '/banner',
+          component: resolve => require(['../components/page/Banner.vue'], resolve),
+          meta: { title: '首页轮播图' }
+        },
+        {
           path: '/channel',
           component: resolve => require(['../components/page/Channel.vue'], resolve),
           meta: { title: '用户渠道配置' }
