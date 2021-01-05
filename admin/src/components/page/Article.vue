@@ -3,30 +3,30 @@
     <div class="crumbs">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item
-          ><i class="el-icon-lx-cascades"></i> 渠道配置</el-breadcrumb-item
+          ><i class="el-icon-lx-cascades"></i> 文章列表</el-breadcrumb-item
         >
       </el-breadcrumb>
     </div>
     <div class="container">
       <div class="handle-box">
+        <el-input
+          v-model="select_word"
+          placeholder="筛选关键词"
+          class="handle-input mr10"
+        ></el-input>
+        <el-button type="primary" class="search">搜索</el-button>
+        <el-button type="primary" class="search">重置</el-button>
         <el-button type="primary" class="handle-del mr10" @click="add"
-          >新增数据</el-button
+          >新增文章</el-button
         >
       </div>
 
-      <el-table
-        :data="tableData"
-        border
-        class="table"
-        ref="multipleTable"
-        @selection-change="handleSelectionChange"
-      >
+      <el-table :data="tableData" border class="table" ref="multipleTable">
         <el-table-column prop="id" label="id" width="80"> </el-table-column>
         <el-table-column prop="name" label="渠道名称" width="150">
         </el-table-column>
         <el-table-column prop="channel" label="渠道号" width="180">
         </el-table-column>
-
         <el-table-column label="操作" width="180" align="center">
           <template slot-scope="scope">
             <el-button
@@ -50,12 +50,6 @@
     <!-- 编辑弹出框 -->
     <el-dialog title="编辑" :visible.sync="editVisible" width="30%">
       <el-form ref="form" :model="form" label-width="120px">
-        <!-- <el-form-item label="id">
-          <el-input
-            v-model="form.id"
-            placeholder="id为空就是新增数据"
-          ></el-input>
-        </el-form-item> -->
         <el-form-item label="渠道名称">
           <el-input v-model="form.name"></el-input>
         </el-form-item>
@@ -85,16 +79,15 @@ export default {
   name: "basetable",
   data() {
     return {
-      url: "./static/vuetable.json",
+      url: "",
       tableData: [],
       cur_page: 1,
-      del_list: [],
-      is_search: false,
       editVisible: false,
       delVisible: false,
       form: {},
       idx: -1,
       deleteid: "",
+      select_word: "",
     };
   },
   created() {
@@ -133,25 +126,11 @@ export default {
       this.form = {};
       this.editVisible = true;
     },
-    search() {
-      this.is_search = true;
-    },
-    formatter(row, column) {
-      return row.address;
-    },
-    filterTag(value, row) {
-      return row.tag === value;
-    },
     handleEdit(index, row) {
       console.log("点击编辑");
       this.idx = index;
       const item = this.tableData[index];
       this.form = item;
-      // this.form = {
-      //     id: item.id,
-      //     name: item.name,
-      //     appid: item.appid
-      // }
       this.editVisible = true;
     },
     handleDelete(index, row) {
@@ -160,26 +139,12 @@ export default {
       this.deleteid = row.id;
       this.delVisible = true;
     },
-    delAll() {
-      const length = this.multipleSelection.length;
-      let str = "";
-      this.del_list = this.del_list.concat(this.multipleSelection);
-      for (let i = 0; i < length; i++) {
-        str += this.multipleSelection[i].name + " ";
-      }
-      this.$message.error("删除了" + str);
-      this.multipleSelection = [];
-    },
-    handleSelectionChange(val) {
-      this.multipleSelection = val;
-    },
     // 保存编辑
     saveEdit() {
       this.$set(this.tableData, this.idx, this.form);
       console.log("提交修改信息", this.form);
       this.editVisible = false;
       this.$message.success(`操作成功`);
-
       this.$axios
         .post("/admin.php/configure/channel/channelupdate", this.form)
         .then((res) => {
@@ -206,6 +171,9 @@ export default {
 </script>
 
 <style scoped>
+.search {
+  margin-left: 10px;
+}
 .handle-box {
   margin-bottom: 20px;
 }

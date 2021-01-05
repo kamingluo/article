@@ -17,7 +17,7 @@
             <span>渠道用户比例(总用户数:{{ allusersnumber }})</span>
           </div>
           <div v-for="item in channeldata">
-            <div @click="getchannelData(item.channel)">
+            <div>
               {{ item.name }}(渠道号:{{ item.channel }}) (注册人数:{{
                 item.count
               }})
@@ -30,33 +30,6 @@
           </div>
         </el-card>
       </el-col>
-
-      <!-- 渠道信息框 -->
-      <el-dialog
-        title="渠道操作信息"
-        :visible.sync="channeldataVisible"
-        width="70%"
-      >
-        <div class="bodaydata">
-          <div class="userdatatitle">7天任务信息</div>
-          <div class="userdatadiv" v-for="(value, name) in channeltaskdata">
-            <span class="keyname">{{ name }}:</span
-            ><span class="keyvalue"> {{ value }} </span>
-          </div>
-        </div>
-
-        <div class="bodaydata">
-          <div class="userdatatitle">7天金币信息</div>
-          <div class="userdatadiv" v-for="(value, name) in channelcoinsdata">
-            <span class="keyname">{{ name }}:</span
-            ><span class="keyvalue"> {{ value }} </span>
-          </div>
-        </div>
-
-        <span slot="footer" class="dialog-footer">
-          <el-button @click="channeldataVisible = false">关闭</el-button>
-        </span>
-      </el-dialog>
 
       <el-col :span="16">
         <el-row :gutter="20" class="mgb20">
@@ -119,9 +92,6 @@ export default {
       channeldata: [],
       allusersnumber: 0,
       channelif: false,
-      channeldataVisible: false,
-      channeltaskdata: null,
-      channelcoinsdata: null,
       data: [],
     };
   },
@@ -136,8 +106,6 @@ export default {
 
   created() {
     this.adminchanneldata();
-    this.admintodaycoins();
-    this.adminhistorycoins();
     this.adminusersdata();
   },
 
@@ -145,10 +113,8 @@ export default {
     channelnumber: function (number) {
       var num = (number / this.allusersnumber) * 100;
       num = num.toFixed(1); //保留一位小数
-      // console.log(typeof num);
       return Number(num); //转变成Number类型才不会报错
     },
-
     //拿到渠道用户注册数
     adminchanneldata() {
       this.$axios.post("/admin.php/index/channeldata").then((res) => {
@@ -158,39 +124,12 @@ export default {
         this.channelif = true;
       });
     },
-
-    //拿到今天的消耗数据
-    admintodaycoins() {
-      //this.url = '/admin.php/configure/extension/extension';
-      this.$axios.post("/admin.php/index/todaycoins").then((res) => {
-        console.log("拿到今天的消耗数据", res.data);
-        this.todaycoins = res.data.data;
-      });
-    },
-
-    //拿到历史的消耗数据
-    adminhistorycoins() {
-      //this.url = '/admin.php/index/historycoins';
-      this.$axios.post("/admin.php/index/historycoins").then((res) => {
-        console.log("拿到历史的消耗数据", res.data);
-        this.historycoins = res.data.data[0];
-      });
-    },
     //拿到用户数据
     adminusersdata() {
       //this.url = '/admin.php/configure/extension/extension';
       this.$axios.post("/admin.php/index/usersdata").then((res) => {
         console.log("拿到用户数据", res.data);
         this.usersdata = res.data.data;
-      });
-    },
-    getchannelData(channel) {
-      this.url = "/admin.php/configure/dataquery/channeldata";
-      this.$axios.post(this.url, { channel: channel }).then((res) => {
-        console.log("渠道用户信息", res.data);
-        this.channeltaskdata = res.data.task;
-        this.channelcoinsdata = res.data.coins;
-        this.channeldataVisible = true;
       });
     },
   },
