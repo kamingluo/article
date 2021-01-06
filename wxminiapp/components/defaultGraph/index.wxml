@@ -1,0 +1,8 @@
+ <view class='default'>
+ 	<view>
+ 		<image src='{{imageurl}}'></image>
+ 	</view>
+ 	<view>
+ 		<text>{{tips}}</text>
+ 	</view>
+ </view>

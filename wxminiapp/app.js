@@ -23,7 +23,7 @@ App({
 
 
 
-
+//用户注册更新
   getUserInfo: function (e) {
     let that = this;
     var data = {
@@ -67,7 +67,6 @@ App({
       this.globalData.addapptips = true;
     }
   },
-
 
 
   /**
@@ -129,12 +128,6 @@ App({
       })
     })
   }
-
-
-
-
-
-
 
 
 })

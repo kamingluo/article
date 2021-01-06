@@ -28,14 +28,14 @@
       {
         "pagePath": "pages/search/search",
         "text": "搜索",
-        "iconPath": "images/config/index.png",
-        "selectedIconPath": "images/config/sindex.png"
+        "iconPath": "images/config/search.png",
+        "selectedIconPath": "images/config/ssearch.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "我的",
-        "iconPath": "images/config/index.png",
-        "selectedIconPath": "images/config/sindex.png"
+        "iconPath": "images/config/my.png",
+        "selectedIconPath": "images/config/smy.png"
       }
     ]
   }

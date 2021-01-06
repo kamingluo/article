@@ -10,5 +10,10 @@ class Index
     {
 
     	return  "kaming的开发团队" ;
-    }    
+    } 
+
+    
+    
+    
+
 }
