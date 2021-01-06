@@ -7,11 +7,55 @@ const baseConfig = require('./../../utils/config.js')//配置文件
 
 Page({
   data: {
+    host:'https://article.gzywudao.top/',
     swiperList:[] ,
+    articleslist: []
   },
   onLoad() {
-    this.swiperList()
+    let host = baseConfig.host;
+    this.setData({
+      host: host
+    })
+
+    this.datalist()
+    this.bannerlist()
+    // this.swiperList()
   },
+
+
+  datalist: function () {
+    request({
+      service: '/miniapp.php/article/articles/lists',
+      method: 'GET',
+      data: {
+      },
+      success: res => {
+        console.log("文章列表", res.data)
+        this.setData({
+          articleslist: res.data,
+        })
+      }
+    })
+  },
+
+
+  bannerlist: function () {
+    request({
+      service: '/miniapp.php/datalist/banner',
+      method: 'GET',
+      data: {
+      },
+      success: res => {
+        console.log("banner列表", res.data)
+        this.setData({
+          swiperList: res.data,
+        })
+      }
+    })
+  },
+
+
+
   swiperList:function(){
     let data = [{
       id: 0,

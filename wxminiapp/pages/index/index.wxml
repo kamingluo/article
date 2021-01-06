@@ -1,47 +1,105 @@
 <cu-custom bgColor="bg-gradual-blue">
   <view slot="content">群名称</view>
 </cu-custom>
-
+<!-- 
 <view>
   <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}} " indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="500">
     <swiper-item wx:for="{{swiperList}}" wx:key>
-      <!-- <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image> -->
-      <view class="cu-card case">
+      <view class="cu-card case" >
         <view class="cu-item shadow">
           <view class="image">
-            <image src="{{item.url}}" mode="widthFix"></image>
+            <image src="{{item.image}}" mode="widthFix"></image>
             <view class="cu-bar bg-shadeBottom">
-              <text class="text-cut">我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。</text>
+              <text class="text-cut">{{item.title}}</text>
             </view>
           </view>
         </view>
       </view>
     </swiper-item>
   </swiper>
+</view> -->
+
+
+<view class="swiper-body">
+  <swiper class="card-swiper round-dot" circular="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item wx:for="{{swiperList}}" wx:for-index="index" wx:key="item">
+      <view wx:if="{{item.type ==4}}" class="swiper-item" mode="aspectFill">
+        <ad wx:if="{{banneradshow}}" capture-bind:tap="gdtbanneradclick" ad-intervals="30" bindload="banneradsuccess" binderror="banneraderr" unit-id="{{item.appid}}"></ad>
+        <view class="swiper-item-image" wx:else bindtap='clickSwiper' data-data='{{item}}'>
+          <image src="{{item.image}}" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view wx:if="{{item.type !=4}}" class="swiper-item" bindtap='clickSwiper' data-data='{{item}}'>
+        <image src="{{item.image}}" mode="aspectFill"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+
+
+<view class="zhedang">
+
 </view>
 
 
 
-<view class="cu-list grid col-4 no-border">
-  <view class="cu-item" wx:for="1234" wx:key>
-    <view class="cuIcon-cardboardfill text-red">
+<view class="icon-list centered">
+  <view class="cu-list grid col-4 no-border">
+    <view class="cu-item">
+      <view class="icon-body">
+        <image src='{{host + "miniapp/images/icons/xiaoxi.png"}}'></image>
+      </view>
+      <text>最新发布</text>
     </view>
-    <text>名称</text>
+    <view class="cu-item">
+      <view class="icon-body">
+        <image src='{{host + "miniapp/images/icons/remen.png"}}'></image>
+      </view>
+      <text>热门文章</text>
+    </view>
+    <view class="cu-item">
+      <view class="icon-body">
+        <image src='{{host + "miniapp/images/icons/about.png"}}'></image>
+      </view>
+      <text>关于我们</text>
+    </view>
+    <view class="cu-item">
+      <view class="icon-body">
+        <image src='{{host + "miniapp/images/icons/kefu.png"}}'></image>
+      </view>
+      <text>联系客服</text>
+    </view>
   </view>
 </view>
 
-
-<view class="centered">
-  <view class="list-body">
-    <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');height: 350rpx; border-radius: 15rpx;">
-      <view class="newpadding text-white">
-        <view class=" text-sm">
-          <text class="title">我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。</text>
-        </view>
-        <view class="time text-xs">
-          <text decode="{{true}}"><text class="cuIcon-remind text-witle"></text>&nbsp;2021-01-03&nbsp;&nbsp;&nbsp;&nbsp;</text> <text decode="{{true}}"><text class="cuIcon-attention text-blue"></text>&nbsp;455</text>
+<view>
+  <view wx:for="{{articleslist}}" wx:key="item">
+    <view class="centered">
+      <view class="list-body">
+        <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{item.image}}');height: 350rpx; border-radius: 15rpx;">
+          <view class="newpadding text-white">
+            <view class=" text-df">
+              <text class="title">{{item.title}}</text>
+            </view>
+            <view class="time text-sm">
+              <text decode="{{true}}"><text class="cuIcon-remind text-witle"></text>&nbsp;{{item.create_time}}&nbsp;&nbsp;&nbsp;&nbsp;</text>
+              <text decode="{{true}}"><text class="cuIcon-attention text-blue"></text>&nbsp;{{item.seenum}}{{index}}</text>
+            </view>
+          </view>
         </view>
       </view>
     </view>
+    <view class="centered " wx:if="{{(index+1)%3==0}}">
+      <view class="list-body ">
+        <gdtad adtype="5" adid="adunit-d5696eeef58dad62" position="测试页面" capture-bind:tap="testdianji">
+        </gdtad>
+      </view>
+    </view>
   </view>
+
+  <view style='margin-top: 15rpx;color:#aaaaaa' class='centered'>
+    <text>-------已经到底啦-------</text>
+  </view>
+</view>
+<view class="zhanwei">
 </view>

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -67,6 +67,14 @@
 					"id": -1,
 					"name": "我的页面",
 					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "热门文章",
+					"pathName": "pages/articles/articles",
+					"query": "type=1",
 					"scene": null
 				}
 			]

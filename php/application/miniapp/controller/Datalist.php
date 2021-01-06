@@ -18,13 +18,13 @@ class Datalist
       $number=($pages - 1)*10 ;
     }
     if($search ==null){
-      $countnumber=db('articles')->where('switch',0)->count();
-      $data=db('articles')->where('switch',0)->order('id desc')->limit($number,10)->select();
+      $countnumber=db('banner')->where('switch',0)->count();
+      $data=db('banner')->where('switch',0)->order('id desc')->limit($number,10)->select();
     }
     else{
       $where['title'] = array('like','%'.$search.'%');
-      $countnumber=db('articles')->where('switch',0)->where($where)->count();
-      $data=db('articles')->where('switch',0)->where($where)->order('id desc')->limit($number,10)->select();
+      $countnumber=db('banner')->where('switch',0)->where($where)->count();
+      $data=db('banner')->where('switch',0)->where($where)->order('id desc')->limit($number,10)->select();
     }
     $state=['state'   => '200','message'  => "banner列表查询成功" ];
     $resdata=array_merge($state,array('count'=>$countnumber),array('data'=>$data));

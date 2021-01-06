@@ -43,19 +43,19 @@ Component({
       return false
     },
     adclick(e) {
-      console.log("点击组件广告")
+      //console.log("点击组件广告")
       console.log(e.currentTarget.dataset.position)
       console.log(e.currentTarget.dataset.adtype)
       let data={
         'adtype':e.currentTarget.dataset.adtype,
         'position':e.currentTarget.dataset.position
       };
-      common.clickgdtadstatistics(data)
+      //common.clickgdtadstatistics(data)
 
     },
 
     adsuccess: function (e) {
-       console.log("广告加载成功",e)
+       //console.log("广告加载成功",e)
       // console.log(e.currentTarget.dataset.position)
       // console.log(e.currentTarget.dataset.adtype)
       let data = {
@@ -63,17 +63,17 @@ Component({
         'position': e.currentTarget.dataset.position,
         'state':0
       };//state=0成功1失败
-      common.adloadstatistics(data)
+      //common.adloadstatistics(data)
     },
 
     aderr: function (e) {
-      console.log("广告加载失败", e)
+      //console.log("广告加载失败", e)
       let data = {
         'adtype': e.currentTarget.dataset.adtype,
         'position': e.currentTarget.dataset.position,
         'state': 1
       };//state=0成功1失败
-      common.adloadstatistics(data)
+      //common.adloadstatistics(data)
     },
 
 

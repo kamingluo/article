@@ -26,8 +26,8 @@
 <scroll-view scroll-x class="bg-white nav">
   <view class="flex text-center">
     <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect" data-id="{{index}}">
-      <text wx:if="{{index==1}}">观看记录</text>
-      <text wx:elif="{{index==2}}">分享记录</text>
+      <text wx:if="{{index==0}}">观看记录</text>
+      <text wx:elif="{{index==1}}">分享记录</text>
       <text wx:else>点赞记录</text>
     </view>
   </view>

@@ -1,6 +1,6 @@
 module.exports = {
   //host: 'http://127.0.0.1/myproject/love/php/public/', //本地请求域名
-  host: 'https://love.gzywudao.top/',//正式请求域名和图片地址
+  host: 'https://article.gzywudao.top/',//正式请求域名和图片地址
   cversion: 1, //版本号
   appid: 'wx0e060ad90f7f41c4', //小程序appid
   appname: "群记分", //小程序名称
