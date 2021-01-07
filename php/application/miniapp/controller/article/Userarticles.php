@@ -13,7 +13,7 @@ class Userarticles
       $user_id =$request->param("user_id");//用户id
       $article_id =$request->param("article_id");//文章id
       $openid=$request->param("openid");//用户openid
-      $type=$request->param("type");//记录类型：1观看2转发3点赞
+      $type=$request->param("type");//记录类型：0观看1转发2点赞
       $time =date('Y-m-d H:i:s',time());//获取当前时间
       if($user_id==0){
         $resdata=['state'   => '200','message'  => "官方审核人员没id不统计"];
@@ -39,7 +39,7 @@ class Userarticles
   public function record(Request $request){
    $user_id =$request->param("user_id");//用户id
    $pages =$request->param("pages");//类型
-   $type =$request->param("type");//记录类型：1观看2转发3点赞
+   $type =$request->param("type");//记录类型：0观看1转发2点赞
    //Db::field('articles.*')->table(['articles'=>'id','user_articles_record'=>'article_id'])->where('articles.switch=0')->limit($number,10)->select();//多表联合查询
    if(!$pages){
        $pages=1;

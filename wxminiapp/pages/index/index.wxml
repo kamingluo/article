@@ -1,76 +1,63 @@
 <cu-custom bgColor="bg-gradual-blue">
   <view slot="content">群名称</view>
 </cu-custom>
-<!-- 
-<view>
-  <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}} " indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="500">
+
+<view class="swiperbody" wx:if="{{swiperList.length>0}}">
+  <swiper class="screen-swiper  " circular="false" autoplay="false" interval="3000" duration="500">
     <swiper-item wx:for="{{swiperList}}" wx:key>
-      <view class="cu-card case" >
-        <view class="cu-item shadow">
-          <view class="image">
-            <image src="{{item.image}}" mode="widthFix"></image>
-            <view class="cu-bar bg-shadeBottom">
-              <text class="text-cut">{{item.title}}</text>
+      <view class="centered">
+        <view class="list-body">
+          <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{item.image}}');height: 350rpx; border-radius: 15rpx;">
+            <view class="newpadding text-white">
+              <view class=" text-df">
+                <text class="title">{{item.title}}</text>
+              </view>
+              <view class="time text-sm">
+                <text decode="{{true}}"><text class="cuIcon-remind text-witle"></text>&nbsp;{{item.create_time}}&nbsp;&nbsp;&nbsp;&nbsp;</text>
+                <text decode="{{true}}"><text class="cuIcon-attention text-blue"></text>&nbsp;{{item.seenum}}</text>
+              </view>
             </view>
           </view>
         </view>
       </view>
     </swiper-item>
   </swiper>
-</view> -->
-
-
-<view class="swiper-body">
-  <swiper class="card-swiper round-dot" circular="true" autoplay="true" interval="5000" duration="500">
-    <swiper-item wx:for="{{swiperList}}" wx:for-index="index" wx:key="item">
-      <view wx:if="{{item.type ==4}}" class="swiper-item" mode="aspectFill">
-        <ad wx:if="{{banneradshow}}" capture-bind:tap="gdtbanneradclick" ad-intervals="30" bindload="banneradsuccess" binderror="banneraderr" unit-id="{{item.appid}}"></ad>
-        <view class="swiper-item-image" wx:else bindtap='clickSwiper' data-data='{{item}}'>
-          <image src="{{item.image}}" mode="aspectFill"></image>
-        </view>
-      </view>
-      <view wx:if="{{item.type !=4}}" class="swiper-item" bindtap='clickSwiper' data-data='{{item}}'>
-        <image src="{{item.image}}" mode="aspectFill"></image>
-      </view>
-    </swiper-item>
-  </swiper>
-</view>
-
-
-<view class="zhedang">
-
 </view>
 
 
 
-<view class="icon-list centered">
-  <view class="cu-list grid col-4 no-border">
-    <view class="cu-item">
-      <view class="icon-body">
-        <image src='{{host + "miniapp/images/icons/xiaoxi.png"}}'></image>
-      </view>
-      <text>最新发布</text>
+
+
+<view class="cu-list grid col-4 no-border">
+  <view class="cu-item" bindtap="newlist">
+    <view class="icon-body">
+      <image src='{{host + "miniapp/images/icons/xiaoxi.png"}}'></image>
     </view>
-    <view class="cu-item">
-      <view class="icon-body">
-        <image src='{{host + "miniapp/images/icons/remen.png"}}'></image>
-      </view>
-      <text>热门文章</text>
+    <text>最新发布</text>
+  </view>
+  <view class="cu-item">
+    <view class="icon-body">
+      <image src='{{host + "miniapp/images/icons/remen.png"}}'></image>
     </view>
-    <view class="cu-item">
-      <view class="icon-body">
-        <image src='{{host + "miniapp/images/icons/about.png"}}'></image>
-      </view>
-      <text>关于我们</text>
+    <text>热门文章</text>
+  </view>
+  <view class="cu-item">
+    <view class="icon-body">
+      <image src='{{host + "miniapp/images/icons/about.png"}}'></image>
     </view>
-    <view class="cu-item">
-      <view class="icon-body">
-        <image src='{{host + "miniapp/images/icons/kefu.png"}}'></image>
-      </view>
-      <text>联系客服</text>
+    <text>关于我们</text>
+  </view>
+  <view class="cu-item">
+    <view class="icon-body">
+      <image src='{{host + "miniapp/images/icons/kefu.png"}}'></image>
     </view>
+    <text>联系客服</text>
   </view>
 </view>
+
+
+
+
 
 <view>
   <view wx:for="{{articleslist}}" wx:key="item">
@@ -83,7 +70,7 @@
             </view>
             <view class="time text-sm">
               <text decode="{{true}}"><text class="cuIcon-remind text-witle"></text>&nbsp;{{item.create_time}}&nbsp;&nbsp;&nbsp;&nbsp;</text>
-              <text decode="{{true}}"><text class="cuIcon-attention text-blue"></text>&nbsp;{{item.seenum}}{{index}}</text>
+              <text decode="{{true}}"><text class="cuIcon-attention text-blue"></text>&nbsp;{{item.seenum}}</text>
             </view>
           </view>
         </view>

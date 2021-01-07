@@ -7,4 +7,5 @@ module.exports = {
   videoadid:"adunit-75b1d3f72dd6956b",//激励视频广告id
   banner: ['adunit-b92b310f7f1b2b12', 'adunit-81b6aefb284a3d4f', 'adunit-59a03407e4da4e8f'],//banner广告id
   moban: ['adunit-d5696eeef58dad62', 'adunit-ab2844694bfb0af1', 'adunit-b01774a672847dd7'],//模板广告id
+  insertad:'adunit-b8955104700af731'
 }

@@ -57,5 +57,17 @@ page{
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 .list-body image{
-  margin-top: 30rpx;
+  margin-top: 15rpx;
+}
+.cu-card.article>.cu-item {
+	padding-bottom: 15rpx;
+}
+
+
+.cu-card>.cu-item {
+	display: block;
+	background-color: var(--white);
+	overflow: hidden;
+	border-radius: 10rpx;
+	margin: 15rpx;
 }
