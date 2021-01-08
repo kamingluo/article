@@ -5,45 +5,67 @@ const {
 const common = require('./../../utils/common.js') //公共函数
 const baseConfig = require('./../../utils/config.js')//配置文件
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     TabCur: 0,
+    pages: 1,
+    datalist: [],
+    count: 0
   },
-
   tabSelect(e) {
     this.setData({
       TabCur: e.currentTarget.dataset.id,
     })
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    this.datalist()
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  //点击跳转文章
+  clickarticles:function(e){
+    let articlesurl=encodeURIComponent(e.currentTarget.dataset.data.jumpurl);
+     let id=e.currentTarget.dataset.data.id;
+    wx.navigateTo({
+      url: '/pages/webview/webview?url=' + articlesurl  + '&id=' + this.data.articlesid
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
+  //获取文章列表
+  datalist: function () {
+    let type = this.data.TabCur;
+    let user_id = wx.getStorageSync('userdata').id || 0;
+    let pages = this.data.pages;
+    request({
+      service: 'miniapp.php/article/userarticles/record',
+      method: 'GET',
+      data: {
+        type: type,
+        user_id: user_id,
+        pages: pages
+      },
+      success: res => {
+        console.log("文章列表", res.data)
+        let datalist = this.data.datalist;
+        var newdatalist = [...datalist, ...res.data];
+        that.setData({
+          datalist: newdatalist,
+          count: res.count
+        })
+      }
+    })
+  },
+  //页面上拉触底事件的处理函数
   onReachBottom: function () {
+    var that = this
+    var count = that.data.count;//拿到总数
+    var pages = that.data.pages;
+    if (pages * 10 >= count) {
+      return;
+    }
+    else {
+      let newpages = pages + 1;
+      that.setData({
+        pages: newpages
+      })
+      that.datalist()
+    }
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

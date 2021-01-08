@@ -7,7 +7,7 @@
 
 <view>
   <view wx:for="{{articleslist}}" wx:key="item">
-    <view class="centered">
+    <view class="centered" bindtap="clickarticles" data-jumpurl="{{item.jumpurl}}" data-id="{{item.id}}" >
       <view class="list-body">
         <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{item.image}}');height: 350rpx; border-radius: 15rpx;">
           <view class="newpadding text-white">
@@ -24,7 +24,7 @@
     </view>
     <view class="centered " wx:if="{{(index+1)%3==0}}">
       <view class="list-body ">
-        <gdtad adtype="5" adid="adunit-cb851dc9c3904d54" position="测试页面" capture-bind:tap="testdianji">
+        <gdtad adtype="5" adid="adunit-cb851dc9c3904d54" position="文章列表">
         </gdtad>
       </view>
     </view>

@@ -6,10 +6,46 @@
   <view class="cu-bar search bg-white">
     <view class="search-form round">
       <text class="cuIcon-search"></text>
-      <input type="text" placeholder="搜索文章如：砍价" confirm-type="search"></input>
+      <input type="text" placeholder="搜索文章如：砍价" confirm-type="clicksearch" bindinput="searchtext" focus="true"></input>
     </view>
     <view class="action">
       <button class="cu-btn bg-green shadow-blur round">搜索</button>
     </view>
   </view>
+</view>
+
+
+
+
+
+<view>
+  <view wx:for="{{articleslist}}" wx:key="item">
+    <view class="centered" bindtap="clickarticles" data-jumpurl="{{item.jumpurl}}" data-id="{{item.id}}" >
+      <view class="list-body">
+        <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{item.image}}');height: 350rpx; border-radius: 15rpx;">
+          <view class="newpadding text-white">
+            <view class=" text-df">
+              <text class="title">{{item.title}}</text>
+            </view>
+            <view class="time text-sm">
+              <text decode="{{true}}"><text class="cuIcon-remind text-witle"></text>&nbsp;{{item.create_time}}&nbsp;&nbsp;&nbsp;&nbsp;</text>
+              <text decode="{{true}}"><text class="cuIcon-attention text-blue"></text>&nbsp;{{item.seenum}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="centered " wx:if="{{(index+1)%3==0}}">
+      <view class="list-body ">
+        <gdtad adtype="5" adid="adunit-d5696eeef58dad62" position="搜索页面">
+        </gdtad>
+      </view>
+    </view>
+  </view>
+
+  <view style='margin-top: 15rpx;color:#aaaaaa' class='centered'>
+    <text>-------已经到底啦-------</text>
+  </view>
+</view>
+<view class="zhanwei">
 </view>

@@ -3,9 +3,8 @@
     "pages/index/index",
     "pages/my/my",
     "pages/search/search",
+    "pages/webview/webview",
     "pages/articles/articles"
-
-
   ],
   "window": {
     "backgroundTextStyle": "light",

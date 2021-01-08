@@ -29,13 +29,13 @@
 
 
 <view class="cu-list grid col-4 no-border">
-  <view class="cu-item" bindtap="newlist">
+  <view class="cu-item" bindtap="articleslist" data-type="2">
     <view class="icon-body">
       <image src='{{host + "miniapp/images/icons/xiaoxi.png"}}'></image>
     </view>
     <text>最新发布</text>
   </view>
-  <view class="cu-item">
+  <view class="cu-item" bindtap="articleslist" data-type="1">
     <view class="icon-body">
       <image src='{{host + "miniapp/images/icons/remen.png"}}'></image>
     </view>
@@ -48,10 +48,12 @@
     <text>关于我们</text>
   </view>
   <view class="cu-item">
-    <view class="icon-body">
-      <image src='{{host + "miniapp/images/icons/kefu.png"}}'></image>
-    </view>
-    <text>联系客服</text>
+   <kaming-button open-type="contact">
+      <view class="icon-body">
+        <image src='{{host + "miniapp/images/icons/kefu.png"}}'></image>
+      </view>
+      <text>联系客服</text>
+    </kaming-button>
   </view>
 </view>
 
@@ -61,7 +63,7 @@
 
 <view>
   <view wx:for="{{articleslist}}" wx:key="item">
-    <view class="centered">
+    <view class="centered" bindtap="clickarticles" data-jumpurl="{{item.jumpurl}}"  data-id="{{item.id}}">
       <view class="list-body">
         <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{item.image}}');height: 350rpx; border-radius: 15rpx;">
           <view class="newpadding text-white">
@@ -78,7 +80,7 @@
     </view>
     <view class="centered " wx:if="{{(index+1)%3==0}}">
       <view class="list-body ">
-        <gdtad adtype="5" adid="adunit-d5696eeef58dad62" position="测试页面" capture-bind:tap="testdianji">
+        <gdtad adtype="5" adid="adunit-d5696eeef58dad62" position="首页">
         </gdtad>
       </view>
     </view>

@@ -10,23 +10,18 @@ class Adstatistics
   public function alladnumber(Request $request){
     
 
-    $allloadbanner=db('gdt_ad_load')-> where('adtype',1)->whereTime('create_time', 'today')->count();//今天加载banner广告总数
-    $allloadmoban=db('gdt_ad_load')-> where('adtype',5)->whereTime('create_time', 'today')->count();//今天加载模板广告总数
-    $loadbanner=db('gdt_ad_load')-> where('adtype',1)-> where('state',0)->whereTime('create_time', 'today')->count();//今天加载banner广告成功数
-    $loadmoban=db('gdt_ad_load')-> where('adtype',5)-> where('state',0)->whereTime('create_time', 'today')->count();//今天加载模板广告成功数
-
     $clickmoban=db('click_gdt_ad')-> where('adtype',5)->whereTime('create_time', 'today')->group("user_id")->count();//今天点击模板去重广告数
     $clickbanner=db('click_gdt_ad')-> where('adtype',1)->whereTime('create_time', 'today')->group("user_id")->count();//今天点击banner去重广告数
+    $seevideo=db('click_gdt_ad')-> where('adtype',2)->whereTime('create_time', 'today')->count();//今天观看激励视频完成数不去重
+    $clickgrid=db('click_gdt_ad')-> where('adtype',3)->whereTime('create_time', 'today')->count();//今天点击格子广告数不去重
+    $clickvideo=db('click_gdt_ad')-> where('adtype',4)->whereTime('create_time', 'today')->group("user_id")->count();//今天点击视频广告数去重
+    $insertad=db('click_gdt_ad')-> where('adtype',7)->whereTime('create_time', 'today')->count();//今天弹出插屏广告数不去重
 
-    $bannerproportion=round($loadbanner/$allloadbanner*100,2)."％";//加载banner广告成功率
 
-    $mobanproportion=round($loadmoban/$allloadmoban*100,2)."％";//加载模板广告成功率
-    
-    $data = ['allloadbanner' =>$allloadbanner,'allloadmoban'=>$allloadmoban,'loadbanner'=>$loadbanner,'loadmoban'=>$loadmoban,'clickmoban'=>$clickmoban,'clickbanner'=>$clickbanner,'bannerproportion'=>$bannerproportion,'mobanproportion'=>$mobanproportion];
-    $state=['state'   => '200','message'  => "广告总数统计" ];
+    $data = ['clickmoban'=>$clickmoban,'clickbanner'=>$clickbanner,'seevideo'=>$seevideo,'clickgrid'=>$clickgrid,'clickvideo'=>$clickvideo,'insertad'=>$insertad];
+    $state=['state'   => '200','message'  => "今日广告总数统计" ];
     $resdata=array_merge($state,array('data'=>$data));
     return $resdata;
-   
   }
 
   public function channeladclick(Request $request)

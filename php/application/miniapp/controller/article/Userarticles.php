@@ -7,7 +7,7 @@ use think\Config;
 class Userarticles
 {
 
-   //用户文章记录
+   //用户文章统计
    public function statistics(Request $request){
    
       $user_id =$request->param("user_id");//用户id
@@ -19,6 +19,8 @@ class Userarticles
         $resdata=['state'   => '200','message'  => "官方审核人员没id不统计"];
         return $resdata;
       }
+      $addseenum= db('articles')->where('id',$article_id)->setInc('seenum',1);//文章观看次数加1
+
       $record=db('user_articles_record')->where('user_id',$user_id)->where('article_id',$article_id)->where('type',$type)->find();//查询用户是否记录过这文章
 
       if($record==null){

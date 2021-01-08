@@ -50,7 +50,7 @@ Component({
         'adtype':e.currentTarget.dataset.adtype,
         'position':e.currentTarget.dataset.position
       };
-      //common.clickgdtadstatistics(data)
+      common.clickgdtadstatistics(data)
 
     },
 

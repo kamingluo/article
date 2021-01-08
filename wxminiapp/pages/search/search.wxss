@@ -1,1 +1,21 @@
-/* pages/search/search.wxss */
+.newpadding {
+    padding: 220rpx 10rpx 10rpx 20rpx;
+  }
+  
+  .list-body {
+    width: 88%;
+   margin-bottom: 20rpx;
+  }
+  
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .time {
+    margin-top: 12rpx;
+  }
+  

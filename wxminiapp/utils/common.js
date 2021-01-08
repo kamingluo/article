@@ -83,7 +83,7 @@ function clickgdtadstatistics(e) {
   let user_id = wx.getStorageSync('userdata').id || 0;
   data.user_id = user_id;
   request({
-    service: 'ad/gdtad/clickad',
+    service: 'miniapp.php/ad/gdtad/clickad',
     data: data,
     success: res => {
       console.log("点击广告统计返回", res)
@@ -97,7 +97,7 @@ function adloadstatistics(e){
   let user_id = wx.getStorageSync('userdata').id || 0;
   data.user_id = user_id;
   request({
-    service: 'ad/gdtad/adload',
+    service: 'miniapp.php/ad/gdtad/adload',
     data: data,
     success: res => {
       console.log("加载广告统计返回", res)

@@ -31,6 +31,14 @@ class Index
         return $resdata;
     }
 
+    //后台生成群二维码
+    public function groupqrcode(Request $request)
+    {
+        $channel=$request->param("channel");//渠道码
+        $data = $newCurrency ->getqrcode($channel);
+        return $data ;
+    }
+
 
    
    
