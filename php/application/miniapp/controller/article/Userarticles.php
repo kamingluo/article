@@ -46,9 +46,6 @@ class Userarticles
    if(!$pages){
        $pages=1;
    }
-   if(!$type){
-       $type=1;
-   }
    $endnumber=$pages*10 ; //结束查询条数
    $startnumber=$endnumber -10;//开始查询条数
    $sql = "select articles.*,user_articles_record.openid from articles,user_articles_record where user_articles_record.article_id=articles.id and user_articles_record.type = ".$type."  and articles.switch = 0 and user_articles_record.user_id = ".$user_id." order BY user_articles_record.update_time desc LIMIT ".$startnumber.",10;";

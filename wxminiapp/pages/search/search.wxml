@@ -19,7 +19,7 @@
 
 
 <view>
-  <view wx:for="{{articleslist}}" wx:key="item">
+  <view wx:for="{{datalist}}" wx:key="item">
     <view class="centered" bindtap="clickarticles"  data-data="{{item}}" >
       <view class="list-body">
         <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{item.image}}');height: 350rpx; border-radius: 15rpx;">
@@ -42,10 +42,10 @@
       </view>
     </view>
   </view>
-
+<!-- 
   <view style='margin-top: 15rpx;color:#aaaaaa' class='centered'>
     <text>-------已经到底啦-------</text>
-  </view>
+  </view> -->
 </view>
 <view class="zhanwei">
 </view>

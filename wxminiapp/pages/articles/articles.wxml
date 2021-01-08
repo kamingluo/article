@@ -1,6 +1,6 @@
 <cu-custom bgColor="bg-blue" isBack="{{true}}">
   <view slot="backText">返回</view>
-  <view slot="content">热门文章</view>
+  <view slot="content">{{type==1?"热门文章":"最新文章"}}</view>
 </cu-custom>
 
 
@@ -16,7 +16,7 @@
             </view>
             <view class="time text-sm">
               <text decode="{{true}}"><text class="cuIcon-remind text-witle"></text>&nbsp;{{item.create_time}}&nbsp;&nbsp;&nbsp;&nbsp;</text>
-              <text decode="{{true}}"><text class="cuIcon-attention text-blue"></text>&nbsp;{{item.seenum}}{{index}}</text>
+              <text decode="{{true}}"><text class="cuIcon-attention text-blue"></text>&nbsp;{{item.seenum}}</text>
             </view>
           </view>
         </view>

@@ -63,7 +63,7 @@ Page({
   //跳转最新和热门文章
   articleslist: function(e) {
     wx.navigateTo({
-      url: '/pages/articles/articles?type=' + e.currentTarget.dataset.data.type
+      url: '/pages/articles/articles?type=' + e.currentTarget.dataset.type
     })
   },
   //点击文章
