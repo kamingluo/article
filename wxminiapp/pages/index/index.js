@@ -28,6 +28,7 @@ Page({
   },
   //获取文章列表
   datalist: function(pages) {
+    var that =this;
     request({
       service: 'miniapp.php/article/articles/lists',
       method: 'GET',
@@ -67,6 +68,7 @@ Page({
   },
   //点击文章
   clickarticles:function(e){
+    console.log("点击文章",e)
     var that=this;
    let articlesurl= e.currentTarget.dataset.data.jumpurl;
    let articlesid = e.currentTarget.dataset.data.id;

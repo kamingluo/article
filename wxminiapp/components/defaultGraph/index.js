@@ -18,7 +18,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    imageurl:baseConfig.imageurl+ 'miniapp/images/config/default.png' ,
+    imageurl:baseConfig.host+ 'miniapp/images/config/default.png' ,
   },
   /**
    * 组件的方法列表

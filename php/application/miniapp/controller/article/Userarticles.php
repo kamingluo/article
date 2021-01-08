@@ -24,7 +24,7 @@ class Userarticles
       $record=db('user_articles_record')->where('user_id',$user_id)->where('article_id',$article_id)->where('type',$type)->find();//查询用户是否记录过这文章
 
       if($record==null){
-        $adres = ['id'=>'','user_id' =>$user_id,'article_id' =>$article_id,'openid' =>$openid,'type' =>$type,'create_time' =>$time,'update_time' =>$update_time];
+        $adres = ['id'=>'','user_id' =>$user_id,'article_id' =>$article_id,'openid' =>$openid,'type' =>$type,'create_time' =>$time,'update_time' =>$time];
         $addata=db('user_articles_record')->insert($adres);
         $resdata=['state'   => '200','message'  => "统计用户观看文章记录成功"];
         return $resdata;

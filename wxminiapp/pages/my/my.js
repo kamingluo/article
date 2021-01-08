@@ -13,8 +13,11 @@ Page({
   },
   tabSelect(e) {
     this.setData({
+      pages:1,
+      count:0,
       TabCur: e.currentTarget.dataset.id,
     })
+    this.datalist()
   },
   onLoad: function (options) {
     this.datalist()
@@ -29,6 +32,7 @@ Page({
   },
   //获取文章列表
   datalist: function () {
+    var that=this
     let type = this.data.TabCur;
     let user_id = wx.getStorageSync('userdata').id || 0;
     let pages = this.data.pages;
@@ -41,9 +45,9 @@ Page({
         pages: pages
       },
       success: res => {
-        console.log("文章列表", res.data)
+        console.log("文章列表", res.datalist)
         let datalist = this.data.datalist;
-        var newdatalist = [...datalist, ...res.data];
+        var newdatalist = [...datalist, ...res.datalist];
         that.setData({
           datalist: newdatalist,
           count: res.count

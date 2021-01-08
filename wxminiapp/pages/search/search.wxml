@@ -9,7 +9,7 @@
       <input type="text" placeholder="搜索文章如：砍价" confirm-type="clicksearch" bindinput="searchtext" focus="true"></input>
     </view>
     <view class="action">
-      <button class="cu-btn bg-green shadow-blur round">搜索</button>
+      <button class="cu-btn bg-green shadow-blur round" bindtap="clicksearch">搜索</button>
     </view>
   </view>
 </view>
@@ -20,7 +20,7 @@
 
 <view>
   <view wx:for="{{articleslist}}" wx:key="item">
-    <view class="centered" bindtap="clickarticles" data-jumpurl="{{item.jumpurl}}" data-id="{{item.id}}" >
+    <view class="centered" bindtap="clickarticles"  data-data="{{item}}" >
       <view class="list-body">
         <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{item.image}}');height: 350rpx; border-radius: 15rpx;">
           <view class="newpadding text-white">

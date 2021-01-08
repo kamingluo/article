@@ -9,10 +9,10 @@
     </view>
     <view class="centered btn-body">
       <view>
-        <view>
+        <!-- <view>
           <button class="cu-btn round bg-blue sm btn-1">更新信息</button>
           <button class="cu-btn round bg-yellow sm btn-2">更新信息</button>
-        </view>
+        </view> -->
       </view>
     </view>
   </view>
@@ -28,7 +28,7 @@
 </scroll-view>
 <view wx:if="{{datalist.length > 0}}">
   <view class="cu-card article" wx:for="{{datalist}}" wx:key="item">
-    <view class="cu-item list-body" bindtap="clickarticles" data-jumpurl="{{item.jumpurl}}"  data-id="{{item.id}}">
+    <view class="cu-item list-body" bindtap="clickarticles"  data-data="{{item}}">
       <view class="content centered">
         <image src="{{item.image}}" mode="aspectFill"></image>
         <view class="desc">
