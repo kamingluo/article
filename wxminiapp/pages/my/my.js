@@ -15,6 +15,7 @@ Page({
     this.setData({
       pages:1,
       count:0,
+      datalist: [],
       TabCur: e.currentTarget.dataset.id,
     })
     this.datalist()
@@ -27,7 +28,7 @@ Page({
     let articlesurl=encodeURIComponent(e.currentTarget.dataset.data.jumpurl);
      let id=e.currentTarget.dataset.data.id;
     wx.navigateTo({
-      url: '/pages/webview/webview?url=' + articlesurl  + '&id=' + this.data.articlesid
+      url: '/pages/webview/webview?url=' + articlesurl + '&id=' + id
     })
   },
   //获取文章列表

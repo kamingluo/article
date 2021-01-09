@@ -20,8 +20,8 @@
 
 <view>
   <view wx:for="{{datalist}}" wx:key="item">
-    <view class="centered" bindtap="clickarticles"  data-data="{{item}}" >
-      <view class="list-body">
+    <view class="centered" >
+      <view class="list-body"  bindtap="clickarticles"  data-data="{{item}}">
         <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{item.image}}');height: 350rpx; border-radius: 15rpx;">
           <view class="newpadding text-white">
             <view class=" text-df">

@@ -144,6 +144,7 @@ Page({
   },
   //加载插屏广告
   gdtinsertad: function() {
+    console.log("加载插屏广告")
     var insertad = baseConfig.insertad;
     console.log("插屏广告代码", insertad)
     if (wx.createInterstitialAd) {
@@ -164,7 +165,7 @@ Page({
   //滚动页面触发插屏广告
   onPageScroll (e) {
     var that=this;
-    let ifonshowgdtinsertad=this.data.onshowgdtinsertad;
+    let ifonshowgdtinsertad=this.data.ifonshowgdtinsertad;
     if(ifonshowgdtinsertad==0){
       that.setData({
         ifonshowgdtinsertad:1,
@@ -216,6 +217,20 @@ Page({
     })
     that.datalist(newpages)
   }
-}
+},
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function (options) {
+    return {
+      title: "文章小程序体验版",
+      desc: "文章小程序体验版",
+      // imageUrl: baseConfig.imageurl+'miniapp/images/appicon.png',
+      // imageUrl: 'https://material.gzywudao.top/image/group/groupicon.png',
+      path: '/pages/index/index?channel=1000', // 路径，传递参数到指定页面。
+    }
+
+
+  }
 
 })

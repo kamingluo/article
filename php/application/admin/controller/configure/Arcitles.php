@@ -37,9 +37,11 @@ class Arcitles
   //删除文章
 	public function delete(Request $request)
   {
-    	  $data=db('articles')-> where('id', $request->param("id"))->delete();
+        $datarecord=db('user_articles_record')-> where('article_id', $request->param("id"))->delete();
+        $data=db('articles')-> where('id', $request->param("id"))->delete();
+        
         $state=['state'   => '200','message'  => "文章删除成功" ];
-        $resdata=array_merge($state,array('data'=>$data));
+        $resdata=array_merge($state,array('data'=>$data),array('datarecord'=>$datarecord));
         return $resdata ;
   }
 

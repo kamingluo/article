@@ -3,6 +3,7 @@ const {
   request
 } = require('./../../utils/request.js');
 const common = require('./../../utils/common.js') //公共函数
+const baseConfig = require('./../../utils/config.js') //配置文件
 var preventShake = 0; //防止快速点击
 Page({
   data: {

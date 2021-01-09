@@ -75,6 +75,7 @@ Page({
   },
   //点击文章
   clickarticles: function (e) {
+    console.log("点击搜索文章")
     var that = this;
     let articlesurl = e.currentTarget.dataset.data.jumpurl;
     let articlesid = e.currentTarget.dataset.data.id;
@@ -86,6 +87,7 @@ Page({
   },
   //调起视频广告
   videoad: function () {
+    console.log("调起视频广告")
     var that = this;
     // 在页面中定义激励视频广告
     let videoAd = null
@@ -95,10 +97,10 @@ Page({
         adUnitId: baseConfig.videoadid
       })
       videoAd.onLoad(() => {
-        //console.log("onLoad")
+        console.log("onLoad")
       })
       videoAd.onError((err) => {
-        //console.log("onError")
+        console.log("onError")
       })
       videoAd.onClose((res) => {
         //console.log("点击关闭视频广告", res)
