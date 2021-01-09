@@ -43,6 +43,16 @@ class Banner
         return $resdata ;
   }
 
+    //详情
+	public function details(Request $request)
+  {
+       
+        $data=db('banner')-> where('id', $request->param("id"))->find();
+        $state=['state'   => '200','message'  => "banner详情" ];
+        $resdata=array_merge($state,array('data'=>$data));
+        return $resdata ;
+  }
+
     //修改banner状态
     public function modifystate(Request $request)
     {

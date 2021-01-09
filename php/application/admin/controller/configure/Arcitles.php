@@ -45,6 +45,16 @@ class Arcitles
         return $resdata ;
   }
 
+   //文章详情
+	public function details(Request $request)
+  {
+       
+        $data=db('articles')-> where('id', $request->param("id"))->find();
+        $state=['state'   => '200','message'  => "文章详情" ];
+        $resdata=array_merge($state,array('data'=>$data));
+        return $resdata ;
+  }
+
   //修改文章状态
   public function modifystate(Request $request)
   {
