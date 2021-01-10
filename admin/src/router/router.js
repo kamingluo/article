@@ -32,9 +32,19 @@ export default new Router({
           meta: { title: '文章列表' }
         },
         {
+          path: '/articleEdit',
+          component: resolve => require(['../components/page/ArticleEdit.vue'], resolve),
+          meta: { title: '文章',noActive:true },
+        },
+        {
           path: '/banner',
           component: resolve => require(['../components/page/Banner.vue'], resolve),
           meta: { title: '首页轮播图' }
+        },
+        {
+          path: '/bannerEdit',
+          component: resolve => require(['../components/page/BannerEdit.vue'], resolve),
+          meta: { title: '轮播图' },
         },
         {
           path: '/channel',

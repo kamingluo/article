@@ -14,8 +14,8 @@
           placeholder="筛选关键词"
           class="handle-input mr10"
         ></el-input>
-        <el-button type="primary" class="search">搜索</el-button>
-        <el-button type="primary" class="search">重置</el-button>
+        <el-button type="primary" class="search" @click="search">搜索</el-button>
+        <el-button type="primary" class="search" @click="reset">重置</el-button>
         <el-button type="primary" class="handle-del mr10" @click="add"
           >新增文章</el-button
         >
@@ -23,45 +23,64 @@
 
       <el-table :data="tableData" border class="table" ref="multipleTable">
         <el-table-column prop="id" label="id" width="80"> </el-table-column>
-        <el-table-column prop="name" label="渠道名称" width="150">
+        <el-table-column prop="title" label="标题" width="150">
         </el-table-column>
-        <el-table-column prop="channel" label="渠道号" width="180">
+        <el-table-column label="图片" width="180">
+          <template slot-scope="scope">
+            <img :src="scope.row.image" alt="" class="img">
+          </template>
+        </el-table-column>
+        <el-table-column prop="jumpurl" label="跳转路径" width="180">
+        </el-table-column>
+        <el-table-column prop="seenum" label="查看次数" width="50">
+        </el-table-column>
+        <el-table-column prop="create_time" label="创建时间" width="160">
+        </el-table-column>
+        <el-table-column prop="update_time" label="更新时间" width="160">
+        </el-table-column>
+        <el-table-column prop="switch" label="开关" width="100">
+          <template slot-scope="scope">
+            <el-switch
+              v-model="scope.row.switch"
+              active-color="#13ce66"
+              inactive-color="#ff4949"
+              :active-value="1"
+              :inactive-value="0"
+              @change="onSwitchChange(scope.row)"  
+            >
+            </el-switch>
+          </template>
         </el-table-column>
         <el-table-column label="操作" width="180" align="center">
           <template slot-scope="scope">
             <el-button
               type="text"
               icon="el-icon-edit"
-              @click="handleEdit(scope.$index, scope.row)"
+              @click="handleEdit(scope.row.id)"
               >编辑</el-button
             >
             <el-button
               type="text"
               icon="el-icon-delete"
               class="red"
-              @click="handleDelete(scope.$index, scope.row)"
+              @click="handleDelete(scope.row.id)"
               >删除</el-button
             >
           </template>
         </el-table-column>
       </el-table>
     </div>
+    <div class="pagination">
+      <el-pagination
+        background
+        @current-change="handleCurrentChange"
+        layout="prev, pager, next"
+        :total="datapages"
+      >
+      </el-pagination>
+    </div>
 
-    <!-- 编辑弹出框 -->
-    <el-dialog title="编辑" :visible.sync="editVisible" width="30%">
-      <el-form ref="form" :model="form" label-width="120px">
-        <el-form-item label="渠道名称">
-          <el-input v-model="form.name"></el-input>
-        </el-form-item>
-        <el-form-item label="渠道号">
-          <el-input v-model="form.channel"></el-input>
-        </el-form-item>
-      </el-form>
-      <span slot="footer" class="dialog-footer">
-        <el-button @click="editVisible = false">取 消</el-button>
-        <el-button type="primary" @click="saveEdit">确 定</el-button>
-      </span>
-    </el-dialog>
+
 
     <!-- 删除提示框 -->
     <el-dialog title="提示" :visible.sync="delVisible" width="300px" center>
@@ -88,6 +107,7 @@ export default {
       idx: -1,
       deleteid: "",
       select_word: "",
+      datapages: 0
     };
   },
   created() {
@@ -107,6 +127,56 @@ export default {
     },
   },
   methods: {
+    //当开关改变
+    async onSwitchChange(arg){
+      let url = "/admin.php/configure/arcitles/modifystate";
+      let params = {
+        id: arg.id,
+        switch: arg.switch
+      }
+      try{
+        const res = await this.$axios.get(url,{params:params})
+        if(res.status == '200'){
+          this.$message({
+            message: '文章状态修改成功',
+            type: 'success'
+          });
+        }else{
+          this.$message({
+            message: res.message,
+            type: 'error'
+          });
+          arg.switch?arg.switch=0:arg.switch=1
+          console.log(res.message)
+        }
+      }catch(error){
+        console.log(error)
+      }
+    },
+    //筛选
+    search() {
+      console.log("点击筛选");
+      let select_word = this.select_word; //关键词
+      console.log("打印关键词", select_word);
+      if (select_word == null || select_word == "") {
+        console.log("11111111");
+        this.$message.error(`关键词不能为空！！！`);
+        return;
+      }
+      this.cur_page = 1;
+      this.getData()
+    },
+    //重置
+    reset(){
+      this.cur_page = 1;
+      this.select_word = "";
+      this.getData();
+    },
+
+
+
+
+
     // 分页导航
     handleCurrentChange(val) {
       this.cur_page = val;
@@ -115,28 +185,29 @@ export default {
 
     //获取数据
     getData() {
-      this.url = "/admin.php/configure/channel/channel";
-      this.$axios.post(this.url).then((res) => {
+      this.url = "/admin.php/configure/arcitles/lists";
+      const params = {
+        pages: this.cur_page,
+        search: this.select_word
+      }
+      this.$axios.post(this.url,params).then((res) => {
         console.log("基础表格请求返回数据", res.data.data);
         this.tableData = res.data.data;
+        this.datapages = res.data.count || 0;
       });
     },
     add() {
-      console.log("点击新增");
-      this.form = {};
-      this.editVisible = true;
+      this.$router.push({
+        path:"/articleEdit"
+      })
     },
-    handleEdit(index, row) {
-      console.log("点击编辑");
-      this.idx = index;
-      const item = this.tableData[index];
-      this.form = item;
-      this.editVisible = true;
+    handleEdit(id) {
+      this.$router.push({
+        path:"/articleEdit?id="+id
+      })
     },
-    handleDelete(index, row) {
-      console.log("点击删除按钮", index, "删除id", row.id);
-      this.idx = index;
-      this.deleteid = row.id;
+    async handleDelete(id) {
+      this.deleteid = id;
       this.delVisible = true;
     },
     // 保存编辑
@@ -153,18 +224,35 @@ export default {
         });
     },
     // 确定删除
-    deleteRow() {
-      this.tableData.splice(this.idx, 1);
-      console.log("删除提交数据id", this.deleteid);
-      this.$axios
-        .post("/admin.php/configure/channel/deletedata", {
-          id: this.deleteid,
-        })
-        .then((res) => {
-          console.log("删除信息返回数据", res);
-        });
-      this.$message.success("删除成功");
-      this.delVisible = false;
+    async deleteRow(id) {
+      let url = "/admin.php/configure/arcitles/delete";
+      let params = {
+        id: this.deleteid,
+      }
+      try{
+        const res = await this.$axios.get(url,{params:params})
+        if(res.status == '200'){
+          this.$message({
+            message: '文章删除成功',
+            type: 'success'
+          });
+          let index = this.tableData.findIndex(item=>item.id === this.deleteid)
+          console.log(index)
+          this.tableData.splice(index,1)
+        }else{
+          this.$message({
+            message: res.message,
+            type: 'error'
+          });
+          console.log(res.message)
+        }
+        this.delVisible = false;
+
+      }catch(error){
+        console.log(error)
+        this.delVisible = false;
+
+      }
     },
   },
 };
@@ -196,5 +284,8 @@ export default {
 }
 .red {
   color: #ff0000;
+}
+.img{
+  width:200px;
 }
 </style>

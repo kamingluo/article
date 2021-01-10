@@ -65,6 +65,7 @@
                     if(this.tagsList.length >= 8){
                         this.tagsList.shift();
                     }
+                    if(route.meta.noActive)return
                     this.tagsList.push({
                         title: route.meta.title,
                         path: route.fullPath,

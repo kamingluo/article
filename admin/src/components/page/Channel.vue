@@ -77,46 +77,7 @@
         <el-button type="primary" @click="deleteRow">确 定</el-button>
       </span>
     </el-dialog>
-    <el-upload
-      class="upload-demo"
-      action="http://up-z2.qiniup.com"
-      :on-remove="handleRemove"
-      :before-remove="beforeRemove"
-      :before-upload="beforeAvatarUpload"
-      :on-success="handleAvatarSuccess"
-      :data="uploadForm"
-      list-type="picture"
-      :file-list="fileList">
-        <i slot="default" class="el-icon-plus"></i>
-        <div slot="file" slot-scope="{file}">
-          <img
-            class="el-upload-list__item-thumbnail"
-            :src="file.raw" alt=""
-          >
-          <span class="el-upload-list__item-actions">
-            <span
-              class="el-upload-list__item-preview"
-              @click="handlePictureCardPreview(file)"
-            >
-              <i class="el-icon-zoom-in"></i>
-            </span>
-            <span
-              v-if="!disabled"
-              class="el-upload-list__item-delete"
-              @click="handleDownload(file)"
-            >
-              <i class="el-icon-download"></i>
-            </span>
-            <span
-              v-if="!disabled"
-              class="el-upload-list__item-delete"
-              @click="handleRemove(file)"
-            >
-              <i class="el-icon-delete"></i>
-            </span>
-          </span>
-        </div>
-    </el-upload>
+ 
   </div>
 </template>
 
@@ -135,16 +96,7 @@ export default {
       form: {},
       idx: -1,
       deleteid: "",
-      fileList: [
-        {
-          url:"http://wxarticles.tao618.cn/1寸.jpg",
-          name:"1寸.jpg"
-        }
-      ],
-      uploadForm:{
-        token:'',
-        key:"ceshi"
-      }
+
     };
   },
   created() {
